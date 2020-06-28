@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'antd';
 
 const GajiList = (props) => {
     const List = props.data.map((data, i) => (
@@ -12,8 +13,8 @@ const GajiList = (props) => {
                 <td>{data.Total}</td>
                 <td>{data.Created_at}</td>
                 <td>
-                    <Link className="btn btn-danger" style={{ marginRight: 10 }}>DELETE</Link>
-                    <Link className="btn btn-primary">EDIT</Link>
+                    <Button type="primary" onClick={() => props.MyDel(data.idGaji)} style={{ marginRight: 10 }}>DELETE</Button>
+                    <Link to={"/gaji/edit/"+data.idGaji} className="btn btn-primary">EDIT</Link>
                 </td>
             </tr>
         </tbody>

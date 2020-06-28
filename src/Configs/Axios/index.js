@@ -67,6 +67,9 @@ const GetIdKaryawan = (data) => GET_ID('UserController?id=',data)
 const PostKaryawan = (data) => POST('UserController',data)
 const PutKaryawan = (data) => PUT('UserController',data)
 const DeleteKaryawan = (data) => DELETE('UserController?id=',data)
+const PostGaji = (data) => POST('GajiController',data)
+const DeleteGaji = (data) => DELETE('GajiController?id=',data)
+const GetIdGaji = (data) => GET_ID('GajiController?id=',data)
 
 const API = {
     GetAbsen,
@@ -78,6 +81,9 @@ const API = {
     PutKaryawan,
     GetIdKaryawan,
     DeleteKaryawan,
+    PostGaji,
+    DeleteGaji,
+    GetIdGaji 
 }
 
 export default API
