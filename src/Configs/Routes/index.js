@@ -13,6 +13,8 @@ import EditKaryawan from '../../Containers/Organism/EditKaryawan';
 import DetailKaryawan from '../../Containers/Organism/DetailKaryawan';
 import AddGaji from '../../Containers/Organism/AddGaji';
 import EditGaji from '../../Containers/Organism/EditGaji';
+import DetailIzin from '../../Containers/Organism/DetailIzin';
+import EditIzin from '../../Containers/Organism/EditIzin';
 
 const MyRouter = () => {
     return(
@@ -25,6 +27,8 @@ const MyRouter = () => {
             <Route path="/absensi" component={AbsensiPage} />
             <Route path="/karyawan" component={KaryawanPage}  />
             <Route path="/gaji" component={GajiPage}  />
+            <Route path = "/izin/edit/:id" component={EditIzin}/>
+            <Route path = "/izin/detail/:id" component={DetailIzin} />
             <Route path="/izin" component={IzinPage}  />
             <Route path="/setting" component={SettingPage}  />
             <Route path ="/absen/detail/:id" component={DetailAbsen}/>

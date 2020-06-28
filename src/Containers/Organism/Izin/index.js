@@ -24,12 +24,26 @@ class IzinPage extends React.Component{
         this.getData()
     }
 
+    HapusOk = (id) => {
+        if (window.confirm('Delete Data.?')) {
+            API.DeleteIzin(id).then(res => {
+                if (res.status == 1) {
+                    this.getData()
+                    alert('Success Delete Data')
+                } else {
+                    alert('Failed')
+                }
+            })  
+        }
+        //console.log(id)  
+    }
+
     render(){
         return(
             <div>
                 <h1 className="text-center">DATA IZIN MASUK</h1>
                 <hr/>
-                <IzinList data={this.state.izin} />
+                <IzinList data={this.state.izin} MyDel={this.HapusOk} />
             </div>
         )
     }

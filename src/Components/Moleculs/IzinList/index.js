@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'antd';
 
 const IzinList = (props) => {
     const List = props.data.map((data, i) => (
@@ -8,12 +9,12 @@ const IzinList = (props) => {
                 <td>{i + 1}</td>
                 <td>NAMA USER</td>
                 <td>{data.JenisIzin}</td>
-                <td>FOTO</td>
+                <td>{data.Keterangan}</td>
                 <td>{data.TanggalIzin}</td>
                 <td>
-                    <Link className="btn btn-success" style={{ marginRight: 10 }}>UPDATE</Link>
-                    <Link className="btn btn-danger" style={{ marginRight: 10 }}>DELETE</Link>
-                    <Link className="btn btn-primary">EDIT</Link>
+                    <Link to={"/izin/detail/"+data.idIzin} className="btn btn-success" style={{ marginRight: 10 }}>DETAIL</Link>
+                    <Button type="primary" style={{marginRight:10}} onClick={() => props.MyDel(data.idIzin)} >HAPUS</Button>
+                    <Link to={"/izin/edit/"+data.idIzin} className="btn btn-primary">EDIT</Link>
 
                 </td>
             </tr>
@@ -26,7 +27,7 @@ const IzinList = (props) => {
                     <th>NO</th>
                     <th>NAMA</th>
                     <th>JENIS IZIN</th>
-                    <th>FOTO</th>
+                    <th>KETERANGAN</th>
                     <th>TANGGAL</th>
                     <th>AKSI</th>
                 </tr>
