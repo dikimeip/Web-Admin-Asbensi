@@ -73,6 +73,7 @@ const GetIdGaji = (data) => GET_ID('GajiController?id=',data)
 const GetIdIzin = (data) => GET_ID('IzinController?id=',data)
 const PutGaji = (data) => PUT('IzinController',data)
 const DeleteIzin = (data) => DELETE('IzinController?id=',data)
+const UploadImage = (data) => POST('ImageUpload',data)
 
 const API = {
     GetAbsen,
@@ -89,7 +90,8 @@ const API = {
     GetIdGaji,
     GetIdIzin,
     PutGaji,
-    DeleteIzin 
+    DeleteIzin,
+    UploadImage
 }
 
 export default API

@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import API from '../../../Configs/Axios';
 import KaryawanList from '../../../Components/Moleculs/KaryawanList';
 import { Link } from 'react-router-dom';
-import { Button } from 'antd';
 
 class KaryawanPage extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            karyawan : []
+            karyawan : [],
         }
     }
 
